@@ -1,0 +1,6 @@
+project: code-terror/simdutf8
+target: simd-cargofuzz
+
+cmds:
+  - cmd: ./simdutf8/fuzzing/fuzz/target/x86_64-unknown-linux-gnu/release/simd
+    libfuzzer: true
