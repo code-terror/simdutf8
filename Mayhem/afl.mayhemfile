@@ -2,5 +2,5 @@ project: code-terror/simdutf8
 target: simdutf8-afl
 
 cmds:
-  - cmd: ./simdutf8/fuzzing/afl/target/debug/simd
+  - cmd: ./afl/simd
     afl: true

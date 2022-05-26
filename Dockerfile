@@ -18,8 +18,11 @@ WORKDIR /simdutf8/fuzzing/fuzz/
 RUN ${HOME}/.cargo/bin/cargo fuzz build
 WORKDIR /Mayhem
 COPY /Mayhem/ /Mayhem/
+WORKDIR /
 
-#FROM ubuntu:20.04
+FROM ubuntu:20.04
 
-#COPY --from=builder /evm/fuzzer/hfuzz_target/x86_64-unknown-linux-gnu/release/* /
-#COPY --from=builder /Mayhemfile /
+COPY --from=builder /simdutf8/fuzzing/fuzz/target/x86_64-unknown-linux-gnu/release/* /cargo-fuzz/
+COPY --from=builder /simdutf8/fuzzing/honggfuzz/hfuzz_target/x86_64-unknown-linux-gnu/release/* /honggfuzz/
+COPY --from=builder /simdutf8/fuzzing/afl/target/debug/* /afl/
+COPY --from=builder /Mayhem/* /Mayhem/

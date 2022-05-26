@@ -2,5 +2,5 @@ project: code-terror/simdutf8
 target: simd-honggfuzz
 
 cmds:
-  - cmd: ./simdutf8/fuzzing/honggfuzz/hfuzz_target/x86_64-unknown-linux-gnu/release/simd
+  - cmd: ./honggfuzz/simd
     honggfuzz: true
